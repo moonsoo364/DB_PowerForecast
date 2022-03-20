@@ -8,8 +8,9 @@ Node Libraries : mysql,cors,express,fs
         
         -lib Directory
         
-            1.db.power.js : 2016년 1월1일 부터 12월31일 까지의 전력 실제값과 예측값이 들어가있는 데이터베이스
-            2.mysql.js : 페이지 상단에 버튼을 반복문으로 구현하기위해서 Mysql에 버튼 이름을 데이터베이스화했음
+            1.db.power.js : 
+              기능1 : 2016년 1월1일 부터 12월31일 까지의 전력 실제값과 예측값이 들어가있는 데이터베이스
+              기능2 : 페이지 상단에 버튼을 반복문으로 구현하기위해서 Mysql에 버튼 이름을 데이터베이스화했음
             3.template.js : HTML코드가 담기는 부문 Header부분을 List변수로 선언해서 DB에서 읽어오게 구현함
             4.topic.js : 'Select * from' SQL문으로 상단 버튼의 텍스트를 읽어옴 header 테이블에는 상단 버튼을 list 테이블에서는 연구과정 하위 버튼을 읽는 부분
 

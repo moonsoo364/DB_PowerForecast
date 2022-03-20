@@ -22,23 +22,27 @@ app.post('/cnn',function(req,res){
     if(err)console.log(err);
 
   for(var i=0;i<rows.length;i++){
-    // const row_time=new Date(rows[i].report_date);
-    // const utc=row_time.getTime()+(row_time.getTimezoneOffset()*60*1000);
-    // const kr_diff=9*60*60*1000;
-    // const kr_time=new Date(utc+kr_diff);
-    // console.log(kr_time);
+    const row_time=new Date(rows[i].report_date);
+    // console.log('row_time : '+row_time);
+    // const offset=new Date().getTimezoneOffset();
+    // console.log('utc시간과 한국시간의 차이'+offset);
+    const utc=row_time.getTime()+(row_time.getTimezoneOffset()*60*1000);
+    // console.log('utc : '+utc);
+    const kr_diff=9*60*60*1000;
+    const kr_time=new Date(utc+kr_diff);
+    // console.log('kr_time : '+kr_time);
    
 
     
-     array.push([i,rows[i].report_date,rows[i].predict_value,rows[i].real_value]);
+     array.push([i,row_time,rows[i].predict_value,rows[i].real_value]);
     
   }
  
  
-  console.log('typeof(array[0][0]) : '+typeof(array[0][0]));
-  console.log('typeof(array[0][1]) : '+typeof(array[0][1]));
-  console.log('typeof(array[0][2]) : '+typeof(array[0][2]));
-  console.log('typeof(array[0][3]) : '+typeof(array[0][3]));
+  // console.log('typeof(array[0][0]) : '+typeof(array[0][0]));
+  // console.log('typeof(array[0][1]) : '+typeof(array[0][1]));
+  // console.log('typeof(array[0][2]) : '+typeof(array[0][2]));
+  // console.log('typeof(array[0][3]) : '+typeof(array[0][3]));
   console.table(array);
   res.send(array);
    

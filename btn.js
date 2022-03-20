@@ -1,6 +1,7 @@
 'use strict'
 
 
+
 window.addEventListener('load',()=>{
   fetch('http://localhost:3040/cnn',{
     method: 'POST',
@@ -28,10 +29,22 @@ window.addEventListener('load',()=>{
       ];
 
       for(var i=0;i<call.length;i++){
-         realdata.push(new Date(call[i][1].slice(0,4),call[i][1].slice(5,7),call[i][1].slice(8,10),call[i][1].slice(11,13)));
-        // realdata.push(new Date(2016,1,1,11));        
-        realdata.push(Number(call[i][2]));
-        realdata.push(Number(call[i][3]));
+        // const day=new Date(call[i][1]);
+        // const reg=new Date(call[i][1]+3240*10000).toISOString().replace("T","").replace(/\..*/,'');
+        // console.log('reg : '+reg);
+        // const str=String(day);
+        // const slice=str.slice(0,5);
+        const day= new Date(call[i][1]);
+        const predict=Number(call[i][2]);
+        const real=Number(call[i][3]);
+        
+         
+        // console.log('slice(0,5) : '+typeof(day));
+        //  realdata.push(new Date(call[i][1].slice(0,4),call[i][1].slice(5,7),call[i][1].slice(8,10),call[i][1].slice(11,13)));
+        // realdata.push(new Date(2016,1,1,11));
+        realdata.push(day);     
+        realdata.push(predict);
+        realdata.push(real);
         chartData.push(realdata);
         realdata=[];
         // console.log(call[i][2]);

@@ -23,6 +23,7 @@ Node Libraries : mysql,cors,express,fs
             2.3040포트로 html코드 전송
         
          -btn.js : 구글 차트로 read.js에서 받아온 전력값을 구글 차트에 Column으로 넣고 ID가 cnn_chart 인 곳에 차트를 출력해준다.
+          js에서 날짜를 읽어올 때 런던표준시로 나오는데 이를 그대로 구글 차트에 넣어도 윈도우 시간 기준으로 해당 국가의 표준시로 자동 변환해준다.
 
         
 

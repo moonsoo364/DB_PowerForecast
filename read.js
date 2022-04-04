@@ -1,4 +1,5 @@
 const express = require('express');
+const { stringify } = require('nodemon/lib/utils');
 const db=require('./lib/db.power');
 const topic = require('./lib/topic');
 const app=express();
@@ -17,8 +18,9 @@ app.listen(3040,(err)=>{
 });
 
 app.post('/cnn',function(req,res){
-  
-  db.query(`select * from cnn where report_date like ?`,'2016-01%',function(err,rows){
+  var month=`${stringify(req.body.month)}`;
+  // console.log(month);
+  db.query(`select * from cnn where report_date like ?`,month,function(err,rows){
     if(err)console.log(err);
 
   for(var i=0;i<rows.length;i++){
@@ -28,15 +30,11 @@ app.post('/cnn',function(req,res){
   }
  
  
-  // console.log('typeof(array[0][0]) : '+typeof(array[0][0]));
-  // console.log('typeof(array[0][1]) : '+typeof(array[0][1]));
-  // console.log('typeof(array[0][2]) : '+typeof(array[0][2]));
-  // console.log('typeof(array[0][3]) : '+typeof(array[0][3]));
   console.table(array);
   res.send(array);
    
   })
- 
+ array=[];
  
 })
 

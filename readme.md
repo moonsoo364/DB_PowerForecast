@@ -26,10 +26,9 @@ Node Libraries : mysql,cors,express,fs
           js에서 날짜를 읽어올 때 런던표준시로 나오는데 이를 그대로 구글 차트에 넣어도 윈도우 시간 기준으로 해당 국가의 표준시로 자동 변환해준다.
           
 
-        
+       <img src="http://naver.me/5NYoJFCi/Power.png">
 
 
-             ![db 전력 드래그](https://user-images.githubusercontent.com/77738437/161458123-3a5bde84-996e-4c6b-abff-108eee9ebd1f.PNG)
-             ![db 전력](https://user-images.githubusercontent.com/77738437/161458136-7faae80f-7ea2-4765-adc9-e30cf6cc288e.PNG)
+            
 
 
